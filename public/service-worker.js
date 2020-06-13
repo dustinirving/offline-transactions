@@ -1,4 +1,9 @@
-const FILES_TO_CACHE = ['/', '/dist/app.bundle.js', './assets/css/styles.css']
+const FILES_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/dist/app.bundle.js',
+  '/assets/css/styles.css'
+]
 
 const PRECACHE = 'precache-v1'
 const RUNTIME = 'runtime'
