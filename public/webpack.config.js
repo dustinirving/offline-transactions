@@ -38,8 +38,8 @@ const config = {
       start_url: '/',
       icons: [
         {
-          src: path.resolve('icons/icon-192x192.png'),
-          sizes: [96, 120, 128, 192, 256, 384, 512],
+          src: path.resolve('icons/icon-512x512.png'),
+          sizes: [96, 120, 128, 180, 192, 256, 384, 512],
           destination: path.join('assets', 'icons')
         }
       ]
