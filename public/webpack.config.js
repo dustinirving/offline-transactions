@@ -31,7 +31,7 @@ const config = {
       name: 'Offline Transactions',
       short_name: 'Budget',
       description:
-        'An application that allows you to view different news articles and save your favorites.',
+        'An application that allows you to add or subtract funds from your budget',
       background_color: '#01579b',
       theme_color: '#ffffff',
       'theme-color': '#ffffff',
