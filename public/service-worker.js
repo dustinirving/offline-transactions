@@ -2,6 +2,7 @@ const FILES_TO_CACHE = [
   '/',
   '/index.html',
   '/dist/app.bundle.js',
+  '/dist/manifest.json',
   '/assets/css/styles.css'
 ]
 
@@ -40,6 +41,14 @@ self.addEventListener('activate', event => {
 })
 
 self.addEventListener('fetch', event => {
+  // non GET requests are not cached and requests to other origins are not cached
+  if (
+    event.request.method !== 'GET' ||
+    !event.request.url.startsWith(self.location.origin)
+  ) {
+    event.respondWith(fetch(event.request))
+    return
+  }
   if (event.request.url.startsWith(self.location.origin)) {
     event.respondWith(
       caches.match(event.request).then(cachedResponse => {
