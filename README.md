@@ -19,7 +19,7 @@ http://offline-transactions.herokuapp.com/
 
 ## Installation
 
-The following npm packages are dependencies:
+### The following npm packages are dependencies:
 
 - "compression": "^1.7.4",
 - "express": "^4.17.1",
@@ -27,7 +27,7 @@ The following npm packages are dependencies:
 - "mongoose": "^5.5.15",
 - "morgan": "^1.9.1"
 
-To install in on your mobile device:
+### To install in on your mobile device:
 
 1. Navigate to the http://offline-transactions.herokuapp.com/ using Safari.
 
@@ -39,9 +39,10 @@ To install in on your mobile device:
 
 5. Custimize the name, then tap Add in the upper-right corner.
 
-To install on desktop:
+### To install on your computer:
 
-Simply 
+1. Simply click the plus icon in the right hand side of the address bar.
+2. Choose a name for the application.
 
 ## Usage
 
