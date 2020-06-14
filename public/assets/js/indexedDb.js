@@ -61,6 +61,7 @@ export function checkDatabase () {
           // clear all items in your store
           store.clear()
         })
+        .catch(err => console.log(err))
     }
   }
 }

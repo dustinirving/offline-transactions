@@ -9,7 +9,7 @@ const config = {
     path: __dirname + '/dist',
     filename: '[name].bundle.js'
   },
-  mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -39,7 +39,7 @@ const config = {
       icons: [
         {
           src: path.resolve('icons/icon-192x192.png'),
-          sizes: [192, 512],
+          sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('assets', 'icons')
         }
       ]
