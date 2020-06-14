@@ -28,8 +28,8 @@ const config = {
     new WebpackPwaManifest({
       fingerprints: false,
       inject: false,
-      name: 'Newsy app',
-      short_name: 'Newsy',
+      name: 'Offline Transactions',
+      short_name: 'Budget',
       description:
         'An application that allows you to view different news articles and save your favorites.',
       background_color: '#01579b',
