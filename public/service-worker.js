@@ -1,3 +1,4 @@
+// Static files to store
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
@@ -9,6 +10,7 @@ const FILES_TO_CACHE = [
 const PRECACHE = 'precache-v1'
 const RUNTIME = 'runtime'
 
+// Add all of the static files initially
 self.addEventListener('install', event => {
   event.waitUntil(
     caches
@@ -42,6 +44,7 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   // non GET requests are not cached and requests to other origins are not cached
+  // This is because post requests can not be added to the cache
   if (
     event.request.method !== 'GET' ||
     !event.request.url.startsWith(self.location.origin)
@@ -49,6 +52,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(event.request))
     return
   }
+  // Update the cache when the user comes back online with the offline data
   if (event.request.url.startsWith(self.location.origin)) {
     event.respondWith(
       caches.open(RUNTIME).then(cache => {

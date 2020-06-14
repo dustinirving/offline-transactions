@@ -1,10 +1,13 @@
+// This module is used to create an indexedDB
+
 let db
-// create a new db request for a "budget" database.
+// create a new db request for the budget indexedDB
 const request = indexedDB.open('budget', 1)
 
 request.onupgradeneeded = function (event) {
   // create object store called "pending" and set autoIncrement to true
   const db = event.target.result
+  // Set autoincrement to true for the pending store
   db.createObjectStore('pending', { autoIncrement: true })
 }
 
@@ -31,7 +34,7 @@ export function saveRecord (record) {
   // add record to your store with add method.
   store.add(record)
 }
-
+// This is called with an online event listener
 export function checkDatabase () {
   // open a transaction on your pending db
   const transaction = db.transaction(['pending'], 'readwrite')
@@ -39,7 +42,7 @@ export function checkDatabase () {
   const store = transaction.objectStore('pending')
   // get all records from store and set to a variable
   const getAll = store.getAll()
-
+  // if there a values in the indexedDB post them to the actual database
   getAll.onsuccess = function () {
     if (getAll.result.length > 0) {
       fetch('/api/transaction/bulk', {
@@ -58,7 +61,7 @@ export function checkDatabase () {
           // access your pending object store
           const store = transaction.objectStore('pending')
 
-          // clear all items in your store
+          // clear all items in the store once they have been posted to the database
           store.clear()
         })
         .catch(err => console.log(err))

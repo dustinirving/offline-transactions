@@ -27,6 +27,22 @@ The following npm packages are dependencies:
 - "mongoose": "^5.5.15",
 - "morgan": "^1.9.1"
 
+To install in on your mobile device:
+
+1. Navigate to the http://offline-transactions.herokuapp.com/ using Safari.
+
+2. Touch the Share button in Safari.
+
+3. Touch the icon labeled Add to Home Screen.
+
+4. Touch Add in the upper-right corner.
+
+5. Custimize the name, then tap Add in the upper-right corner.
+
+To install on desktop:
+
+Simply 
+
 ## Usage
 
 1. Navigate to the home page.

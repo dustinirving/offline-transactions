@@ -1,8 +1,12 @@
+// Import functions to update the indexed database from another module
 import { saveRecord, checkDatabase } from './indexedDb.js'
 
+// Create an array of transactions
 let transactions = []
+// Initiaze a variable for the chart
 let myChart
 
+// Fetch the transactions from the database
 fetch('/api/transaction')
   .then(response => {
     return response.json()
@@ -10,23 +14,28 @@ fetch('/api/transaction')
   .then(data => {
     // save db data on global variable
     transactions = data
-
+    // Call a function to calculate the total
     populateTotal()
+    // Call a function to populate the table
     populateTable()
+    // Call a function to populate the chart
     populateChart()
   })
 
+// Define the function to populate the total
 function populateTotal () {
   // reduce transaction amounts to a single total value
   let total = transactions.reduce((total, t) => {
     return total + parseInt(t.value)
   }, 0)
-
+  // Update the DOM
   let totalEl = document.querySelector('#total')
   totalEl.textContent = total
 }
 
+// Define a function to populate the Table
 function populateTable () {
+  // Update the DOM
   let tbody = document.querySelector('#tbody')
   tbody.innerHTML = ''
 
@@ -63,7 +72,7 @@ function populateChart () {
   if (myChart) {
     myChart.destroy()
   }
-
+  // Use chart js to create the graph
   let ctx = document.getElementById('myChart').getContext('2d')
 
   myChart = new Chart(ctx, {
