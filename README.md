@@ -8,7 +8,7 @@ This is a Progressive Web Application where the user is able to able add or subt
 
 Bootstrap / HTML / JavaScript / Node.js / Express / Mongoose / MongoDB
 
-http://offline-transactions.herokuapp.com/
+https://offline-transactions.herokuapp.com/
 
 ![Budget](./public/assets/gifs/budget.gif)
 
