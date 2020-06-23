@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is a Progressive Web Application where the user is able to able add or subtract funds from their budget. It uses a service worker along with indexedDB for offline functionalities. The user can download the app with their smartphone or install it on desktop.
+This is a Progressive Web Application where the user is able to able add or subtract funds from their budget. It uses a service worker along with indexedDB for offline functionalities. The user can download the app with their smartphone or install it on their computer.
 
 ### Tech Stack
 
